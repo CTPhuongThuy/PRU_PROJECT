@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void DieThietNe()
+    void DieInternal()
     {
         FindObjectOfType<GameSession>().ResetGameSession();
 
@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
         if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies"))
             || myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Enemies")))
         {
-            Invoke("DieThietNe", 2f);
+            Invoke("DieInternal", 1f);
         }
     }
 }
