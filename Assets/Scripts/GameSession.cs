@@ -9,8 +9,10 @@ public class GameSession : MonoBehaviour
 {
     [SerializeField] int score = 0;
     int highestScore = 0;
+    int yourScore =0;
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI highestScoreText;
+    [SerializeField] TextMeshProUGUI yourScoreText;
 
 
 
@@ -42,13 +44,15 @@ public class GameSession : MonoBehaviour
             highestScoreText.text = highestScore.ToString();
         }
 
+        yourScore= score;
+        yourScoreText.text= yourScore.ToString();
         score = 0;
         scoreText.text = score.ToString();
     }
 
 
     internal void ResetGameSession()
-    {
+    {   
         SaveHighestScore();
         SceneManager.LoadScene(0);
     }
