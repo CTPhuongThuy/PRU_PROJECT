@@ -49,6 +49,7 @@ public class GameSession : MonoBehaviour
 
     internal void ResetGameSession()
     {
+        SaveHighestScore();
         SceneManager.LoadScene(0);
     }
 }

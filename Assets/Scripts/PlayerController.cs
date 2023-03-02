@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
         if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies"))
             || myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Enemies")))
         {
-            Invoke("DieInternal", 1f);
+            Invoke("DieInternal", 0.5f);
         }
     }
 }
